@@ -8,10 +8,12 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 export default function ConponentList() {
  
     return (
-        <div>
+        <div className="list-component">
         <h1>Select components</h1>
-        <Link to="specifications">Product specifications</Link>
-        {/* <Link to="contact">Click to view our contact page</Link> */}
+        <Link to="specifications">Product Specifications</Link>
+        <Link to="editable-content">Editable Content</Link>
+        <Link to="drop-down">Drop Down</Link>
+
       </div>
     )
 }

@@ -40,4 +40,11 @@
 .center {
   width: 50%;
   margin: 0 auto;
+  margin-top: 2.3077rem;
+}
+.list-component a{
+  padding: 0 .9231rem;
+}
+.center .List{ 
+  margin: 0 auto;
 }

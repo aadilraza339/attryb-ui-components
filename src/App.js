@@ -7,7 +7,7 @@ import uniqid from "uniqid";
 import { Routes, Route } from "react-router-dom"
 import ConponentList from "./components/component-list/index";
 import EditableContent from "./components/editable-content/index";
-
+import DropDown from "./components/drop-down/index.jsx";
 function App() {
   
 
@@ -16,8 +16,10 @@ function App() {
         <div className="App">
           <ConponentList/>
         <Routes>
-          {/* <Route path="/editable-content" element={ <EditableContent/> } /> */}
+          <Route path="/editable-content" element={ <EditableContent/> } />
           <Route path="/specifications" element={  <ProductSpecifications /> } />
+          <Route path="/drop-down" element={  <DropDown/> } />
+
 
         </Routes>
       </div>
