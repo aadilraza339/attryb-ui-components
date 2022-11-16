@@ -2,7 +2,7 @@
   "name": "components",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://aadilraza339.github.io/attryb-ui-components/", 
+  "homepage": "https://aadilraza339.github.io/attryb-ui-components", 
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
