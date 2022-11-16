@@ -7,7 +7,8 @@ export default function ProductSpecifications({ specifications, setSpecification
 
     const createNewSpecification = () => {
         let inputFieldId = uniqid();
-        var newState = [
+        console.log({ specifications });
+        const newState = [
             ...specifications,
             {
                 _id: inputFieldId,
@@ -39,22 +40,20 @@ export default function ProductSpecifications({ specifications, setSpecification
                 temp[data._id] = false;
             });
 
-            if (dataId) {
-                temp[dataId] = state ? state : true;
-            }
+            if (dataId) temp[dataId] = state;
 
+            console.log({ temp });
             setActives(temp);
         },
         [specifications]
     );
 
-    const stateToggleSpecifiton = (newItem, flag) => {
+    const stateToggleSpecifiton = (newItem, value) => {
         const list = [...specifications];
-        list.filter((item, index) => {
-            if (item?.uid === newItem?.uid) {
-                list[index] = { ...newItem, value: flag };
-            } else {
-                list[index].value = false;
+        list.forEach((item, index) => {
+            console.log(item?._id, newItem?._id);
+            if (item?._id === newItem?._id) {
+                list[index] = { ...newItem };
             }
         });
         setSpecifications(list);
@@ -63,6 +62,7 @@ export default function ProductSpecifications({ specifications, setSpecification
     useEffect(() => {
         console.log({ specifications });
         console.log({ actives });
+        //Updates only on adding and removing specification, therefore the check
         if (Object.keys(actives ?? {}).length === specifications.length) return;
         updateCardsUIState();
     }, [specifications, updateCardsUIState, actives]);
@@ -72,7 +72,7 @@ export default function ProductSpecifications({ specifications, setSpecification
     }, [actives]);
 
     return (
-        <div className="center">
+        <div className="center" style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
             {specifications.map((item, index) => {
                 const { active } = { ...item };
 
@@ -91,6 +91,7 @@ export default function ProductSpecifications({ specifications, setSpecification
                                     outside: { data, isOutside, event },
                                     active: actives,
                                 });
+
                                 stateToggleSpecifiton(data);
                                 updateCardsUIState();
                             }}
