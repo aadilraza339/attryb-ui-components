@@ -2,6 +2,7 @@
 
 import DropDownSearch from "./drop-down-search.jsx"
 import React, { useState, useEffect, useRef, useCallback } from "react";
+import ComponentList from "../component-list/index.jsx";
 
 export default function DropDown() { 
     const [products,setProducts] =useState([
@@ -44,10 +45,13 @@ export default function DropDown() {
     ])
 const [activeItem,SetActiveItem]= useState({})
  return (
-    <DropDownSearch
-        products={products}
-        activeItem={activeItem}
-        SetActiveItem={SetActiveItem}
-    />
+    <div className="">
+        <ComponentList/>
+        <DropDownSearch
+            products={products}
+            activeItem={activeItem}
+            SetActiveItem={SetActiveItem}
+        />
+    </div>
  )
 }

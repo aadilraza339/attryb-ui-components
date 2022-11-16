@@ -44,7 +44,7 @@ export default function ProductSpecifications({ specifications, setSpecification
     };
 
     return (
-        <div className="center" style={{ display: "flex", flexDirection: "column", gap: "24px", padding: "10rem 0" }}>
+        <div className="center" style={{ display: "flex", flexDirection: "column", gap: "24px"}}>
             {specifications.map((item, index) => {
                 return (
                     <div className="box__input_list__item" key={item._id}>

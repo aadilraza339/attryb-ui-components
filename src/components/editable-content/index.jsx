@@ -6,6 +6,7 @@ import EditableContentCard from "./editable-content.jsx"
 import uniqid from "uniqid";
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
+import ComponentList from "../component-list/index.jsx";
 
 
 export default function EditableContent(){
@@ -34,11 +35,14 @@ export default function EditableContent(){
     //     setProductTitleHtml(generateEditableContentHtml(productTitleText))
     //   },[])
     return (
-
-        <EditableContentCard
-          productTitleHtml={productTitleHtml}
-          setProductTitleHtml={setProductTitleHtml}
-        />
+        <div className="">
+          <ComponentList/>
+          <div className="" style={{marginTop:"3rem"}}>Write something</div>
+          <EditableContentCard
+              productTitleHtml={productTitleHtml}
+              setProductTitleHtml={setProductTitleHtml}
+          />
+          </div>
     )
 
 
