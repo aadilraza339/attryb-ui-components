@@ -1,27 +1,28 @@
 import logo from "./logo.svg";
 import "./App.css";
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import ProductSpecifications from "./specifications.jsx";
+import ProductSpecifications from "./components/specifications/index.jsx";
+
 import uniqid from "uniqid";
+import { Routes, Route } from "react-router-dom"
+import ConponentList from "./components/component-list/index";
+import EditableContent from "./components/editable-content/index";
 
 function App() {
-    let [specifications, setSpecifications] = useState([
-        {
-            label: "Brand Name",
-            value: "Enter Brand Name",
-            name: "Enter specification value",
-            _id: uniqid(),
-            active: false,
-            canEditLabel: false,
-            canRemove: false,
-        },
-    ]);
+  
 
     return (
+     
         <div className="App">
-            <ProductSpecifications setSpecifications={setSpecifications} specifications={specifications} />
-        </div>
-    );
+          <ConponentList/>
+        <Routes>
+          {/* <Route path="/editable-content" element={ <EditableContent/> } /> */}
+          <Route path="/specifications" element={  <ProductSpecifications /> } />
+
+        </Routes>
+      </div>
+      );
 }
+
 
 export default App;
