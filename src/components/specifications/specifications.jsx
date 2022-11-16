@@ -31,8 +31,9 @@ export default function ProductSpecifications({ specifications, setSpecification
                 list[index] = spec;
             }
         });
+          setSpecifications(list);
 
-        setSpecifications(list);
+       
     };
 
     const removeSpecification = (newItem) => {
@@ -42,7 +43,7 @@ export default function ProductSpecifications({ specifications, setSpecification
         });
         setSpecifications(row);
     };
-
+    console.log(specifications,"specifications");
     return (
         <div className="center" style={{ display: "flex", flexDirection: "column", gap: "24px"}}>
             {specifications.map((item, index) => {
@@ -63,6 +64,7 @@ export default function ProductSpecifications({ specifications, setSpecification
                                 });
 
                                 setActive("");
+                                updateSpecification(data)
                                 // updateSpecification({ ...data });
                             }}
                             onFocus={(event) => {
