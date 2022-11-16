@@ -1,23 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState, useEffect, useRef, useCallback } from "react";
+import ProductSpecifications from "./specifications.jsx"
+import uniqid from "uniqid";
 
 function App() {
+  let [specifications, setSpecifications] = useState([
+    {
+      label: "Brand Name",
+      value: "Enter Brand Name",
+      name: "Enter specification value",
+      _id: uniqid(),
+      active: false,
+      canEditLabel: false,
+      canRemove: false,
+    },
+  ]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ProductSpecifications
+        setSpecifications={setSpecifications}
+        specifications={specifications}
+      />
     </div>
   );
 }
