@@ -14,6 +14,8 @@ function App() {
   return (
 
     <div className="App">
+      <BrowserRouter>
+
       <HashRouter basename="/">
 
         <Routes>
@@ -24,6 +26,7 @@ function App() {
           <Route path="/" element={<ComponentList />} />
         </Routes>
       </HashRouter>
+    </BrowserRouter>
     </div>
   );
 }
