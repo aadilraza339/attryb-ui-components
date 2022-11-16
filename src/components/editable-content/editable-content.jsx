@@ -31,6 +31,7 @@ export default function EditableContentCard({ productTitleHtml, setProductTitleH
                 responseCallback={(
                     res
                 ) => {
+                    console.log("outsite click...");
                     console.log( res )
                     // if (res?.innerHTML)
                     //  setProductTitleHtml(res?.innerHTML)
