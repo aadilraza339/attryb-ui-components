@@ -4,26 +4,28 @@ import React, { useState, useEffect, useRef, useCallback } from "react";
 import ProductSpecifications from "./components/specifications/index.jsx";
 
 import uniqid from "uniqid";
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route,HashRouter } from "react-router-dom"
 import ComponentList from "./components/component-list/index";
 import EditableContent from "./components/editable-content/index";
 import DropDown from "./components/drop-down/index.jsx";
 function App() {
-  
 
-    return (
-     
-        <div className="App">
-          lllll
+
+  return (
+
+    <div className="App">
+      <HashRouter basename="/">
+
         <Routes>
-          <Route path="/editable-content" element={ <EditableContent/> } />
-          <Route path="/specifications" element={  <ProductSpecifications /> } />
-          <Route path="/drop-down" element={  <DropDown/> } />
+          <Route path="/editable-content" element={<EditableContent />} />
+          <Route path="/specifications" element={<ProductSpecifications />} />
+          <Route path="/drop-down" element={<DropDown />} />
 
-          <Route path="/" element={  <ComponentList/> } />
+          <Route path="/" element={<ComponentList />} />
         </Routes>
-      </div>
-      );
+      </HashRouter>
+    </div>
+  );
 }
 
 
