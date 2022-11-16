@@ -47,9 +47,9 @@ export default function ProductSpecifications({ specifications, setSpecification
         <div className="center" style={{ display: "flex", flexDirection: "column", gap: "24px"}}>
             {specifications.map((item, index) => {
                 return (
-                    <div className="box__input_list__item" key={item._id}>
+                    <div className="box__input_list__item">
                         <ProductSpecification
-                            key={uniqid()}
+                            key={item._id}
                             data={item}
                             active={item._id === active}
                             labelMaxChars={0}
