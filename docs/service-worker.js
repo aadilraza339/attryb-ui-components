@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/attryb-ui-components/precache-manifest.be8b00770218365795fa9bdd725b9919.js"
+  "/attryb-ui-components/precache-manifest.f8e7ac0d993149d7acaded0240cbbc98.js"
 );
 
 workbox.clientsClaim();
