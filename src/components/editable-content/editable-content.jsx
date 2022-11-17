@@ -8,7 +8,7 @@ import DOMPurify from "dompurify";
 export default function EditableContentCard({ productTitleHtml, setProductTitleHtml }) {
     const [editMode, setEditMode] = useState(false)
 
-
+console.log("you");
     return (
 
         <div className="center">
@@ -31,10 +31,10 @@ export default function EditableContentCard({ productTitleHtml, setProductTitleH
                 responseCallback={(
                     res
                 ) => {
-                    console.log("outsite click...");
-                    console.log( res )
-                    // if (res?.innerHTML)
-                    //  setProductTitleHtml(res?.innerHTML)
+                    console.log(res, "Please console it")
+                    // if (res.innerHTML) 
+                    // console.log(res.innerHTML);
+                    // setListContent(res?.innerHTML)
                 }}
             >
                 {/* 
@@ -45,7 +45,7 @@ export default function EditableContentCard({ productTitleHtml, setProductTitleH
                         */}
                 <div
                     dangerouslySetInnerHTML={{
-                        __html: DOMPurify.sanitize(productTitleHtml),
+                        __html: DOMPurify.sanitize(""),
                     }}
                 />
             </EditableContentBlock>

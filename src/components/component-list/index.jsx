@@ -14,6 +14,8 @@ export default function ComponentList() {
         <Link to="/editable-content">Editable Content</Link>
         <Link to="/drop-down">Drop Down</Link>
 
+        <Link to="/pop-up">Pop Up</Link>
+
       </div>
     )
 }

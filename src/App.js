@@ -8,6 +8,8 @@ import { Routes, Route } from "react-router-dom"
 import ComponentList from "./components/component-list/index";
 import EditableContent from "./components/editable-content/index";
 import DropDown from "./components/drop-down/index.jsx";
+import PopUP from "./components/pop-up/index";
+
 function App() {
   
 
@@ -19,6 +21,7 @@ function App() {
           <Route path="/editable-content" element={ <EditableContent/> } />
           <Route path="/specifications" element={  <ProductSpecifications /> } />
           <Route path="/drop-down" element={  <DropDown/> } />
+          <Route path="/pop-up" element={  <PopUP/> } />
 
           <Route path="/" element={  <ComponentList/> } />
         </Routes>
